@@ -46,52 +46,38 @@
       font-size: clamp(16px, 2.5vw, 24px);
     }
 
-    /* GRID MATERI (card otomatis di tengah kalau cuma satu) */
-    .grid {
-      max-width: 1100px; margin: 0 auto;
-      display: grid; gap: 28px; justify-content: center;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 340px));
+    /* DAFTAR MATERI */
+    .list {
+      max-width: 640px; margin: 0 auto;
+      display: flex; flex-direction: column; gap: 18px;
     }
-    .item { display: flex; flex-direction: column; transition: transform .25s ease; }
-    .item:hover { transform: translateY(-6px); }
-
-    /* COVER */
-    .cover {
-      position: relative; overflow: hidden;
-      aspect-ratio: 4 / 5; border-radius: 6px;
-      padding: 22px; display: flex; flex-direction: column;
-      justify-content: space-between;
-      box-shadow: 0 10px 24px rgba(95, 51, 66, .18);
+    .item {
+      display: block;
+      background: var(--beige);
+      border-left: 6px solid var(--olive);
+      border-radius: 8px;
+      padding: 26px 28px;
+      transition: transform .25s ease, box-shadow .25s ease;
     }
-    .cover::before, .cover::after { content: ""; position: absolute; pointer-events: none; }
-    .cover > * { position: relative; z-index: 1; }
-    .cover .label {
+    .item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 26px rgba(95, 51, 66, .15);
+    }
+    .tag {
       font-family: 'Courier Prime', monospace; font-weight: 700;
-      font-size: 11px; letter-spacing: 2px;
+      font-size: 11px; letter-spacing: 2px; color: var(--olive);
     }
-    .cover .title {
+    .item h3 {
+      margin-top: 10px;
       font-family: 'Fraunces', Georgia, serif; font-style: italic; font-weight: 400;
-      font-size: clamp(30px, 3.4vw, 42px); line-height: 1.02; letter-spacing: -.02em;
+      font-size: clamp(24px, 3.4vw, 32px); line-height: 1.15;
+      color: var(--rosewood);
     }
-    .cover .no { font-family: 'Courier Prime', monospace; font-size: 12px; opacity: .85; }
-
-    /* TEMA 1 — Olive + Beige, lingkaran konsentris */
-    .t1 { background: var(--olive); color: var(--beige); }
-    .t1::before {
-      width: 260px; height: 260px; right: -90px; top: -90px; border-radius: 50%;
-      background: repeating-radial-gradient(circle, transparent 0 12px, rgba(242,224,210,.28) 12px 14px);
+    .item p {
+      margin-top: 10px; font-size: 14px; line-height: 1.7; color: var(--plum);
     }
-    .t1::after {
-      width: 120px; height: 120px; left: -40px; bottom: 60px; border-radius: 50%;
-      background: var(--rosewood); opacity: .55;
-    }
-
-    /* INFO DI BAWAH COVER */
-    .info { padding: 16px 4px 0; }
-    .info h3 { color: var(--rosewood); font-size: 17px; margin-bottom: 6px; }
-    .info p { font-size: 13.5px; line-height: 1.6; color: var(--plum); }
     .btn {
-      display: inline-block; margin-top: 12px; padding: 8px 16px;
+      display: inline-block; margin-top: 16px; padding: 9px 18px;
       border: 1px solid var(--rosewood); border-radius: 99px;
       font-size: 11px; letter-spacing: 1.5px; color: var(--rosewood);
       transition: background .2s ease, color .2s ease;
@@ -115,20 +101,14 @@
     <p>Materi yang aku bagikan, gratis untuk kamu.</p>
   </header>
 
-  <section class="grid">
+  <section class="list">
 
     <!-- ===== MATERI 1 ===== -->
     <a class="item" href="#" target="_blank" rel="noopener">
-      <div class="cover t1">
-        <span class="label">CLAUDE AI</span>
-        <span class="title">Build Website dengan Claude AI</span>
-        <span class="no">01</span>
-      </div>
-      <div class="info">
-        <h3>Build Website Menggunakan Claude AI</h3>
-        <p>Panduan membuat website portofolio dari nol dengan bantuan Claude AI, tanpa perlu bisa coding.</p>
-        <span class="btn">BUKA MATERI →</span>
-      </div>
+      <span class="tag">CLAUDE AI</span>
+      <h3>Build Website Menggunakan Claude AI</h3>
+      <p>Panduan membuat website portofolio dari nol dengan bantuan Claude AI, tanpa perlu bisa coding.</p>
+      <span class="btn">BUKA MATERI →</span>
     </a>
 
   </section>
