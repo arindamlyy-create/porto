@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Website portofolio pribadi Rinda.">
   <title>Dewi Arinda Mulya — Portofolio</title>
+  
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --ink: #402d4b;
@@ -94,6 +97,224 @@
       .about p:last-child { font-size: 15px; }
     }
   
+/* ABOUT ME — RECEIPT PORTFOLIO */
+.receipt-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 55px 20px 65px;
+  background: #1a3322;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.receipt-container {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  width: 100%;
+  max-width: 400px;
+  padding: 35px 25px 25px;
+  background: #f7f2e7;
+  color: #2b1f3d;
+  font-family: 'Courier Prime', monospace;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, .4);
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 97%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 0%, #000 97%, transparent 100%);
+}
+
+.receipt-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(rgba(0,0,0,.035) 1px, transparent 0);
+  background-size: 4px 4px;
+  pointer-events: none;
+}
+
+.receipt-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.receipt-header h2 {
+  font-family: 'Courier Prime', monospace;
+  font-size: 24px;
+  font-weight: 700;
+  color: #4b2e83;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+
+.receipt-header p {
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: #4b2e83;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.receipt-container .dashed-line {
+  border: 0;
+  border-top: 1px dashed #7a7a7a;
+  margin: 12px 0;
+}
+
+.receipt-row {
+  display: flex;
+  gap: 0;
+  font-size: 13px;
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.receipt-label {
+  width: 90px;
+  flex-shrink: 0;
+  font-weight: 700;
+}
+
+.receipt-separator {
+  width: 15px;
+  flex-shrink: 0;
+  text-align: center;
+  font-weight: 700;
+}
+
+.receipt-value {
+  flex: 1;
+  overflow-wrap: anywhere;
+}
+
+.receipt-container .section-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #4b2e83;
+  margin: 18px 0 8px;
+  letter-spacing: .5px;
+}
+
+.receipt-container .section-content {
+  font-size: 12px;
+  line-height: 1.6;
+  color: #333;
+  padding-left: 2px;
+}
+
+.receipt-container .section-content ul {
+  list-style: none;
+}
+
+.receipt-container .section-content li {
+  margin-bottom: 4px;
+}
+
+.receipt-footer {
+  text-align: center;
+  margin-top: 25px;
+}
+
+.thank-you {
+  font-size: 10px;
+  letter-spacing: .5px;
+  color: #1a5c2d;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.barcode-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 45px;
+  gap: 2px;
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+
+.bar {
+  background: #4b2e83;
+  height: 100%;
+  flex-shrink: 0;
+}
+
+.barcode-id {
+  font-size: 11px;
+  font-weight: bold;
+  color: #4b2e83;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.print-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  background: #4b2e83;
+  color: white;
+  font-family: 'Courier Prime', monospace;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: .5px;
+  cursor: pointer;
+  transition: background .2s ease;
+}
+
+.print-btn:hover {
+  background: #382163;
+}
+
+@media (max-width: 520px) {
+  .receipt-section {
+    padding: 35px 12px 45px;
+  }
+
+  .receipt-container {
+    padding: 30px 20px 25px;
+  }
+
+  .receipt-header h2 {
+    font-size: 21px;
+  }
+
+  .receipt-row {
+    font-size: 12px;
+  }
+}
+
+@media print {
+  body {
+    padding: 0;
+    background: white;
+  }
+
+  nav,
+  .hero,
+  footer {
+    display: none !important;
+  }
+
+  .receipt-section {
+    padding: 0;
+    background: white;
+  }
+
+  .receipt-container {
+    max-width: 100%;
+    box-shadow: none;
+    -webkit-mask-image: none;
+    mask-image: none;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .print-btn {
+    display: none;
+  }
+}
   </style>
 </head>
 <body>
@@ -131,15 +352,138 @@
       </div>
     </section>
 
-    <section class="about" id="resources">
-      <p class="eyebrow">GET TO KNOW ME</p>
-      <h2>About Me.</h2>
-      <p>
-        Halo, saya Dewi Arinda Mulya Saya adalah mahasiswa Ekonomi Syariah yang sedang
-        mengembangkan diri dan mengeksplorasi berbagai hal baru terutama dalam dunia
-        Digital. 
-      </p>
-    </section>
+   
+<section class="receipt-section" id="resources">
+  <div class="receipt-container">
+
+    <header class="receipt-header">
+      <h2>== ABOUT ME ==</h2>
+      <p>-- OFFICIAL PROFILE RECEIPT --</p>
+    </header>
+
+    <div class="receipt-row">
+      <div class="receipt-label">NAMA</div>
+      <div class="receipt-separator">:</div>
+      <div class="receipt-value">Dewi Arinda Mulya</div>
+    </div>
+
+    <div class="receipt-row">
+      <div class="receipt-label">AGE</div>
+      <div class="receipt-separator">:</div>
+      <div class="receipt-value">21</div>
+    </div>
+
+    <div class="receipt-row">
+      <div class="receipt-label">LOCATION</div>
+      <div class="receipt-separator">:</div>
+      <div class="receipt-value">Jawa Timur, Indonesia</div>
+    </div>
+
+    <hr class="dashed-line">
+
+    <div class="section-title">&gt; ACHIEVEMENTS</div>
+    <div class="section-content">
+      <ul>
+        <li>* Awardee BSI Scholarship Inspirasi 2024</li>
+      </ul>
+    </div>
+
+    <hr class="dashed-line">
+
+    <div class="section-title">&gt; STATUS</div>
+    <div class="section-content">
+      Student &amp; Content Creator<br>
+      (Open Internship &amp; Freelance)
+    </div>
+
+    <hr class="dashed-line">
+
+    <div class="section-title">&gt; TECHNICAL SKILLS</div>
+    <div class="section-content">
+      <ul>
+        <li>* Microsoft Office</li>
+        <li>* Canva, CapCut Pro</li>
+        <li>* AI Tools (GPT AI, Claude, Gemini)</li>
+      </ul>
+    </div>
+
+    <hr class="dashed-line">
+
+    <div class="section-title">&gt; LANGUAGES</div>
+
+    <div class="receipt-row">
+      <div class="receipt-label">Indonesia</div>
+      <div class="receipt-separator">:</div>
+      <div class="receipt-value">Native</div>
+    </div>
+
+    <div class="receipt-row">
+      <div class="receipt-label">English</div>
+      <div class="receipt-separator">:</div>
+      <div class="receipt-value">Beginner</div>
+    </div>
+
+    <hr class="dashed-line">
+
+    <div class="section-title">&gt; EDUCATION</div>
+
+    <div class="section-content" style="margin-bottom: 8px;">
+      <strong>UIN Sayyid Ali Rahmatullah Tulungagung</strong><br>
+      Sharia Economic
+    </div>
+
+    <div class="section-content">
+      <strong>SMAN 1 Srengat</strong><br>
+      Social Science (IPS)
+    </div>
+
+    <hr class="dashed-line">
+
+    <div class="receipt-footer">
+      <div class="thank-you">
+        THANK YOU FOR CHECKING OUT MY PORTFOLIO
+      </div>
+
+      <div class="barcode-box" aria-label="Barcode dekoratif">
+        <div class="bar" style="width:3px"></div>
+        <div class="bar" style="width:1px"></div>
+        <div class="bar" style="width:4px"></div>
+        <div class="bar" style="width:2px"></div>
+        <div class="bar" style="width:1px"></div>
+        <div class="bar" style="width:3px"></div>
+        <div class="bar" style="width:5px"></div>
+        <div class="bar" style="width:1px"></div>
+        <div class="bar" style="width:2px"></div>
+        <div class="bar" style="width:4px"></div>
+        <div class="bar" style="width:1px"></div>
+        <div class="bar" style="width:3px"></div>
+        <div class="bar" style="width:2px"></div>
+        <div class="bar" style="width:1px"></div>
+        <div class="bar" style="width:4px"></div>
+        <div class="bar" style="width:3px"></div>
+        <div class="bar" style="width:1px"></div>
+        <div class="bar" style="width:5px"></div>
+        <div class="bar" style="width:2px"></div>
+        <div class="bar" style="width:1px"></div>
+        <div class="bar" style="width:3px"></div>
+        <div class="bar" style="width:4px"></div>
+        <div class="bar" style="width:1px"></div>
+        <div class="bar" style="width:2px"></div>
+        <div class="bar" style="width:3px"></div>
+      </div>
+
+      <div class="barcode-id">#DEWI-ARINDA-2026</div>
+
+      <button
+        class="print-btn"
+        type="button"
+        onclick="window.print()">
+        🖨️ [ CETAK / SIMPAN STRUK ]
+      </button>
+    </div>
+
+  </div>
+</section>
 
   </main>
   
