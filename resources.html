@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resources — Dewi Arinda Mulya</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Fraunces:ital,wght@0,400;1,400;1,600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --olive: #716D4A;
+      --beige: #F2E0D2;
+      --matcha: #959B67;
+      --rosewood: #88445A;
+      --plum: #5F3342;
+      --wine: #A23A52;
+      --leaf: #7A9E4E;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #fff; color: var(--plum);
+      font-family: Arial, Helvetica, sans-serif;
+      padding: 34px 6.5% 60px; min-height: 100vh;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    nav {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; justify-content: space-between;
+      font-size: 12px; letter-spacing: 2.5px;
+    }
+    nav a { transition: opacity .2s ease; }
+    nav a:hover { opacity: .6; }
+
+    header { max-width: 1100px; margin: 70px auto 50px; text-align: center; }
+    h1 {
+      font-family: 'Fraunces', Georgia, serif; font-style: italic; font-weight: 400;
+      font-size: clamp(44px, 8vw, 96px); color: var(--wine); letter-spacing: -.02em;
+    }
+    header p {
+      margin-top: 14px; color: var(--leaf);
+      font-family: 'Fraunces', Georgia, serif; font-style: italic;
+      font-size: clamp(16px, 2.5vw, 24px);
+    }
+
+    /* GRID MATERI (card otomatis di tengah kalau cuma satu) */
+    .grid {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; gap: 28px; justify-content: center;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 340px));
+    }
+    .item { display: flex; flex-direction: column; transition: transform .25s ease; }
+    .item:hover { transform: translateY(-6px); }
+
+    /* COVER */
+    .cover {
+      position: relative; overflow: hidden;
+      aspect-ratio: 4 / 5; border-radius: 6px;
+      padding: 22px; display: flex; flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 10px 24px rgba(95, 51, 66, .18);
+    }
+    .cover::before, .cover::after { content: ""; position: absolute; pointer-events: none; }
+    .cover > * { position: relative; z-index: 1; }
+    .cover .label {
+      font-family: 'Courier Prime', monospace; font-weight: 700;
+      font-size: 11px; letter-spacing: 2px;
+    }
+    .cover .title {
+      font-family: 'Fraunces', Georgia, serif; font-style: italic; font-weight: 400;
+      font-size: clamp(30px, 3.4vw, 42px); line-height: 1.02; letter-spacing: -.02em;
+    }
+    .cover .no { font-family: 'Courier Prime', monospace; font-size: 12px; opacity: .85; }
+
+    /* TEMA 1 — Olive + Beige, lingkaran konsentris */
+    .t1 { background: var(--olive); color: var(--beige); }
+    .t1::before {
+      width: 260px; height: 260px; right: -90px; top: -90px; border-radius: 50%;
+      background: repeating-radial-gradient(circle, transparent 0 12px, rgba(242,224,210,.28) 12px 14px);
+    }
+    .t1::after {
+      width: 120px; height: 120px; left: -40px; bottom: 60px; border-radius: 50%;
+      background: var(--rosewood); opacity: .55;
+    }
+
+    /* INFO DI BAWAH COVER */
+    .info { padding: 16px 4px 0; }
+    .info h3 { color: var(--rosewood); font-size: 17px; margin-bottom: 6px; }
+    .info p { font-size: 13.5px; line-height: 1.6; color: var(--plum); }
+    .btn {
+      display: inline-block; margin-top: 12px; padding: 8px 16px;
+      border: 1px solid var(--rosewood); border-radius: 99px;
+      font-size: 11px; letter-spacing: 1.5px; color: var(--rosewood);
+      transition: background .2s ease, color .2s ease;
+    }
+    .item:hover .btn { background: var(--rosewood); color: #fff; }
+
+    footer {
+      max-width: 1100px; margin: 70px auto 0; text-align: center;
+      color: var(--rosewood); font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">← BACK TO HOME</a>
+    <a href="mailto:dearmulyaa29@gmail.com">WORK WITH ME</a>
+  </nav>
+
+  <header>
+    <h1>Resources</h1>
+    <p>Materi yang aku bagikan, gratis untuk kamu.</p>
+  </header>
+
+  <section class="grid">
+
+    <!-- ===== MATERI 1 ===== -->
+    <a class="item" href="#" target="_blank" rel="noopener">
+      <div class="cover t1">
+        <span class="label">CLAUDE AI</span>
+        <span class="title">Build Website dengan Claude AI</span>
+        <span class="no">01</span>
+      </div>
+      <div class="info">
+        <h3>Build Website Menggunakan Claude AI</h3>
+        <p>Panduan membuat website portofolio dari nol dengan bantuan Claude AI, tanpa perlu bisa coding.</p>
+        <span class="btn">BUKA MATERI →</span>
+      </div>
+    </a>
+
+  </section>
+
+  <footer>© 2026 Arinda · build in indonesia</footer>
+</body>
+</html>
