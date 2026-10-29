@@ -35,7 +35,7 @@
     nav a { transition: opacity .2s ease; }
     nav a:hover { opacity: .6; }
 
-    header { max-width: 1100px; margin: 70px auto 50px; text-align: center; }
+    header { max-width: 1100px; margin: 60px auto 40px; text-align: center; }
     h1 {
       font-family: 'Fraunces', Georgia, serif; font-style: italic; font-weight: 400;
       font-size: clamp(44px, 8vw, 96px); color: var(--wine); letter-spacing: -.02em;
@@ -46,47 +46,50 @@
       font-size: clamp(16px, 2.5vw, 24px);
     }
 
-    /* DAFTAR MATERI */
+    /* DAFTAR MATERI — bar panjang tipis */
     .list {
-      max-width: 640px; margin: 0 auto;
-      display: flex; flex-direction: column; gap: 18px;
+      max-width: 760px; margin: 0 auto;
+      display: flex; flex-direction: column; gap: 10px;
     }
     .item {
-      display: block;
+      display: flex; align-items: center; gap: 16px;
       background: var(--beige);
-      border-left: 6px solid var(--olive);
-      border-radius: 8px;
-      padding: 26px 28px;
-      transition: transform .25s ease, box-shadow .25s ease;
+      border-left: 5px solid var(--olive);
+      border-radius: 6px;
+      padding: 14px 20px;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
     }
     .item:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 26px rgba(95, 51, 66, .15);
+      transform: translateX(4px);
+      box-shadow: 0 6px 16px rgba(95, 51, 66, .15);
+      background: #f6e8dc;
     }
     .tag {
+      flex-shrink: 0;
       font-family: 'Courier Prime', monospace; font-weight: 700;
-      font-size: 11px; letter-spacing: 2px; color: var(--olive);
+      font-size: 10px; letter-spacing: 2px; color: #fff;
+      background: var(--olive); padding: 4px 10px; border-radius: 99px;
     }
     .item h3 {
-      margin-top: 10px;
+      flex: 1;
       font-family: 'Fraunces', Georgia, serif; font-style: italic; font-weight: 400;
-      font-size: clamp(24px, 3.4vw, 32px); line-height: 1.15;
+      font-size: clamp(16px, 2.4vw, 21px); line-height: 1.2;
       color: var(--rosewood);
     }
-    .item p {
-      margin-top: 10px; font-size: 14px; line-height: 1.7; color: var(--plum);
+    .arrow {
+      flex-shrink: 0; font-size: 18px; color: var(--rosewood);
+      transition: transform .2s ease;
     }
-    .btn {
-      display: inline-block; margin-top: 16px; padding: 9px 18px;
-      border: 1px solid var(--rosewood); border-radius: 99px;
-      font-size: 11px; letter-spacing: 1.5px; color: var(--rosewood);
-      transition: background .2s ease, color .2s ease;
-    }
-    .item:hover .btn { background: var(--rosewood); color: #fff; }
+    .item:hover .arrow { transform: translateX(4px); }
 
     footer {
-      max-width: 1100px; margin: 70px auto 0; text-align: center;
+      max-width: 1100px; margin: 60px auto 0; text-align: center;
       color: var(--rosewood); font-size: 12px;
+    }
+
+    @media (max-width: 520px) {
+      .item { padding: 12px 14px; gap: 10px; }
+      .tag { font-size: 9px; padding: 3px 8px; }
     }
   </style>
 </head>
@@ -98,21 +101,4 @@
 
   <header>
     <h1>Resources</h1>
-    <p>Materi yang aku bagikan, gratis untuk kamu.</p>
-  </header>
-
-  <section class="list">
-
-    <!-- ===== MATERI 1 ===== -->
-    <a class="item" href="#" target="_blank" rel="noopener">
-      <span class="tag">CLAUDE AI</span>
-      <h3>Build Website Menggunakan Claude AI</h3>
-      <p>Panduan membuat website portofolio dari nol dengan bantuan Claude AI, tanpa perlu bisa coding.</p>
-      <span class="btn">BUKA MATERI →</span>
-    </a>
-
-  </section>
-
-  <footer>© 2026 Arinda · build in indonesia</footer>
-</body>
-</html>
+    <p>Materi yang aku bagikan, gratis untuk
