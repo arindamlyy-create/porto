@@ -5,48 +5,68 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Website portofolio pribadi Rinda.">
   <title>Dewi Arinda Mulya — Portofolio</title>
-  
-<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Fraunces:ital,wght@1,400;1,600&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --ink: #402d4b;
-      --muted: #887d8d;
-      --line: #ded6c9;
-      --paper: #ffffff;
-      --icon: #655d64;
+      --olive: #716D4A;
+      --beige: #F2E0D2;
+      --matcha: #959B67;
+      --rosewood: #88445A;
+      --plum: #5F3342;
+      --wine: #A23A52;      /* warna tulisan nama */
+      --leaf: #7A9E4E;      /* hijau tagline */
+      --line: #e6d6c8;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
-      background: var(--paper);
-      color: var(--ink);
+      background: #fff;
+      color: var(--plum);
       font-family: Arial, Helvetica, sans-serif;
-      padding: 34px 6.5%;
     }
     a { color: inherit; text-decoration: none; }
+
+    /* NAV */
     nav {
       display: flex; align-items: center; justify-content: space-between;
       gap: 18px; max-width: 1200px; margin: 0 auto;
-      font-size: 12px; letter-spacing: 2.5px;
+      padding: 34px 6.5% 0;
+      font-size: 12px; letter-spacing: 2.5px; color: var(--plum);
     }
     nav a { transition: opacity .2s ease; }
     nav a:hover { opacity: .6; }
+
+    /* HERO */
     .hero {
       min-height: 78vh; max-width: 1200px; margin: 0 auto;
       display: flex; flex-direction: column; align-items: center;
-      justify-content: center; text-align: center; padding: 70px 0 90px;
+      justify-content: center; text-align: center;
+      padding: 70px 6.5% 90px;
     }
     h1 {
-      font-size: clamp(54px, 10.5vw, 142px); font-weight: 400;
-      letter-spacing: -.065em; line-height: .94;
+      font-family: 'Fraunces', Georgia, serif;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--wine);
+      font-size: clamp(48px, 9.5vw, 128px);
+      letter-spacing: -.02em;
+      line-height: 1;
     }
     .portfolio-title {
-      margin-top: 8px; font-size: clamp(26px, 5vw, 58px);
-      font-weight: 400; letter-spacing: .18em; line-height: 1.2;
+      margin-top: 14px;
+      font-family: 'Fraunces', Georgia, serif;
+      font-style: italic;
+      font-size: clamp(24px, 4.5vw, 52px);
+      font-weight: 400;
+      letter-spacing: .06em;
+      color: var(--leaf);
     }
     .tagline {
-      margin-top: 28px; color: var(--muted);
+      margin-top: 28px; color: var(--rosewood);
       font-family: Georgia, "Times New Roman", serif;
       font-size: clamp(15px, 2vw, 21px); font-style: italic;
     }
@@ -57,7 +77,7 @@
     .socials a {
       width: 54px; height: 54px; border: 1px solid var(--line);
       border-radius: 50%; display: grid; place-items: center;
-      color: var(--icon); background: white;
+      color: var(--rosewood); background: white;
       transition: background .2s ease, color .2s ease, transform .2s ease;
     }
     .socials svg {
@@ -67,270 +87,131 @@
     }
     .socials .filled { fill: currentColor; stroke: none; }
     .socials a:hover {
-      background: var(--ink); color: white; transform: translateY(-2px);
+      background: var(--rosewood); color: white; transform: translateY(-2px);
     }
-    .about {
-      max-width: 760px; margin: 0 auto; padding: 55px 0 100px;
-      line-height: 1.9;
+
+    /* ABOUT ME — hijau full lebar layar, mulai dari bawah hero */
+    .receipt-section {
+      width: 100%;
+      padding: 70px 20px 80px;
+      background: var(--olive);
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
     }
-    .eyebrow {
-      color: var(--muted); font-size: 11px; letter-spacing: 3px;
-      margin-bottom: 16px;
+    .receipt-container {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      width: 100%;
+      max-width: 400px;
+      padding: 35px 25px 25px;
+      background: var(--beige);
+      color: var(--plum);
+      font-family: 'Courier Prime', monospace;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, .4);
+      -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 97%, transparent 100%);
+      mask-image: linear-gradient(to bottom, #000 0%, #000 97%, transparent 100%);
     }
-    .about h2 {
-      font-size: clamp(36px, 6vw, 58px); font-weight: 400;
-      letter-spacing: -.04em; margin-bottom: 20px;
+    .receipt-container::before {
+      content: ""; position: absolute; inset: 0; z-index: -1;
+      background: radial-gradient(rgba(0,0,0,.035) 1px, transparent 0);
+      background-size: 4px 4px; pointer-events: none;
     }
-    .about p:last-child { max-width: 680px; font-size: 17px; color: #665b6a; }
+    .receipt-header { text-align: center; margin-bottom: 20px; }
+    .receipt-header h2 {
+      font-family: 'Courier Prime', monospace;
+      font-size: 24px; font-weight: 700; color: var(--rosewood);
+      letter-spacing: 1px; margin-bottom: 5px;
+    }
+    .receipt-header p {
+      font-size: 11px; letter-spacing: 1px; color: var(--rosewood);
+      margin-bottom: 15px; font-weight: bold;
+    }
+    .receipt-container .dashed-line {
+      border: 0; border-top: 1px dashed #8a7468; margin: 12px 0;
+    }
+    .receipt-row {
+      display: flex; font-size: 13px; margin-bottom: 6px; line-height: 1.5;
+    }
+    .receipt-label { width: 90px; flex-shrink: 0; font-weight: 700; }
+    .receipt-separator { width: 15px; flex-shrink: 0; text-align: center; font-weight: 700; }
+    .receipt-value { flex: 1; overflow-wrap: anywhere; }
+    .receipt-container .section-title {
+      font-size: 14px; font-weight: 700; color: var(--rosewood);
+      margin: 18px 0 8px; letter-spacing: .5px;
+    }
+    .receipt-container .section-content {
+      font-size: 12px; line-height: 1.6; color: var(--plum); padding-left: 2px;
+    }
+    .receipt-container .section-content ul { list-style: none; }
+    .receipt-container .section-content li { margin-bottom: 4px; }
+    .receipt-footer { text-align: center; margin-top: 25px; }
+    .thank-you {
+      font-size: 10px; letter-spacing: .5px; color: var(--olive);
+      font-weight: bold; margin-bottom: 15px;
+    }
+    .barcode-box {
+      display: flex; justify-content: center; align-items: center;
+      height: 45px; gap: 2px; margin-bottom: 8px; overflow: hidden;
+    }
+    .bar { background: var(--plum); height: 100%; flex-shrink: 0; }
+    .barcode-id {
+      font-size: 11px; font-weight: bold; color: var(--plum);
+      letter-spacing: 1px; margin-bottom: 20px;
+    }
+    .print-btn {
+      width: 100%; padding: 12px; border: none; border-radius: 4px;
+      background: var(--rosewood); color: white;
+      font-family: 'Courier Prime', monospace; font-size: 12px;
+      font-weight: bold; letter-spacing: .5px; cursor: pointer;
+      transition: background .2s ease;
+    }
+    .print-btn:hover { background: var(--plum); }
+
     footer {
-      max-width: 1200px; margin: 0 auto; padding: 26px 0 12px;
-      text-align: center; color: var(--muted); font-size: 12px;
+      padding: 26px 6.5% 26px; text-align: center;
+      color: var(--rosewood); font-size: 12px; background: #fff;
     }
+
     @media (max-width: 520px) {
-      body { padding: 28px 6%; }
-      nav { font-size: 10px; letter-spacing: 1.5px; }
-      .hero { min-height: 72vh; padding: 60px 0 75px; }
+      nav { padding: 28px 6% 0; font-size: 10px; letter-spacing: 1.5px; }
+      .hero { min-height: 72vh; padding: 60px 6% 75px; }
       .socials { gap: 12px; margin-top: 38px; }
       .socials a { width: 46px; height: 46px; }
       .socials svg { width: 19px; height: 19px; }
-      .about { padding: 35px 0 75px; }
-      .about p:last-child { font-size: 15px; }
+      .receipt-section { padding: 45px 12px 55px; }
+      .receipt-container { padding: 30px 20px 25px; }
+      .receipt-header h2 { font-size: 21px; }
+      .receipt-row { font-size: 12px; }
     }
-  
-/* ABOUT ME — RECEIPT PORTFOLIO */
-.receipt-section {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 55px 20px 65px;
-  background: #1a3322;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-}
 
-.receipt-container {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  width: 100%;
-  max-width: 400px;
-  padding: 35px 25px 25px;
-  background: #f7f2e7;
-  color: #2b1f3d;
-  font-family: 'Courier Prime', monospace;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, .4);
-  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 97%, transparent 100%);
-  mask-image: linear-gradient(to bottom, #000 0%, #000 97%, transparent 100%);
-}
-
-.receipt-container::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: radial-gradient(rgba(0,0,0,.035) 1px, transparent 0);
-  background-size: 4px 4px;
-  pointer-events: none;
-}
-
-.receipt-header {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.receipt-header h2 {
-  font-family: 'Courier Prime', monospace;
-  font-size: 24px;
-  font-weight: 700;
-  color: #4b2e83;
-  letter-spacing: 1px;
-  margin-bottom: 5px;
-}
-
-.receipt-header p {
-  font-size: 11px;
-  letter-spacing: 1px;
-  color: #4b2e83;
-  margin-bottom: 15px;
-  font-weight: bold;
-}
-
-.receipt-container .dashed-line {
-  border: 0;
-  border-top: 1px dashed #7a7a7a;
-  margin: 12px 0;
-}
-
-.receipt-row {
-  display: flex;
-  gap: 0;
-  font-size: 13px;
-  margin-bottom: 6px;
-  line-height: 1.5;
-}
-
-.receipt-label {
-  width: 90px;
-  flex-shrink: 0;
-  font-weight: 700;
-}
-
-.receipt-separator {
-  width: 15px;
-  flex-shrink: 0;
-  text-align: center;
-  font-weight: 700;
-}
-
-.receipt-value {
-  flex: 1;
-  overflow-wrap: anywhere;
-}
-
-.receipt-container .section-title {
-  font-size: 14px;
-  font-weight: 700;
-  color: #4b2e83;
-  margin: 18px 0 8px;
-  letter-spacing: .5px;
-}
-
-.receipt-container .section-content {
-  font-size: 12px;
-  line-height: 1.6;
-  color: #333;
-  padding-left: 2px;
-}
-
-.receipt-container .section-content ul {
-  list-style: none;
-}
-
-.receipt-container .section-content li {
-  margin-bottom: 4px;
-}
-
-.receipt-footer {
-  text-align: center;
-  margin-top: 25px;
-}
-
-.thank-you {
-  font-size: 10px;
-  letter-spacing: .5px;
-  color: #1a5c2d;
-  font-weight: bold;
-  margin-bottom: 15px;
-}
-
-.barcode-box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 45px;
-  gap: 2px;
-  margin-bottom: 8px;
-  overflow: hidden;
-}
-
-.bar {
-  background: #4b2e83;
-  height: 100%;
-  flex-shrink: 0;
-}
-
-.barcode-id {
-  font-size: 11px;
-  font-weight: bold;
-  color: #4b2e83;
-  letter-spacing: 1px;
-  margin-bottom: 20px;
-}
-
-.print-btn {
-  width: 100%;
-  padding: 12px;
-  border: none;
-  border-radius: 4px;
-  background: #4b2e83;
-  color: white;
-  font-family: 'Courier Prime', monospace;
-  font-size: 12px;
-  font-weight: bold;
-  letter-spacing: .5px;
-  cursor: pointer;
-  transition: background .2s ease;
-}
-
-.print-btn:hover {
-  background: #382163;
-}
-
-@media (max-width: 520px) {
-  .receipt-section {
-    padding: 35px 12px 45px;
-  }
-
-  .receipt-container {
-    padding: 30px 20px 25px;
-  }
-
-  .receipt-header h2 {
-    font-size: 21px;
-  }
-
-  .receipt-row {
-    font-size: 12px;
-  }
-}
-
-@media print {
-  body {
-    padding: 0;
-    background: white;
-  }
-
-  nav,
-  .hero,
-  footer {
-    display: none !important;
-  }
-
-  .receipt-section {
-    padding: 0;
-    background: white;
-  }
-
-  .receipt-container {
-    max-width: 100%;
-    box-shadow: none;
-    -webkit-mask-image: none;
-    mask-image: none;
-    print-color-adjust: exact;
-    -webkit-print-color-adjust: exact;
-  }
-
-  .print-btn {
-    display: none;
-  }
-}
+    @media print {
+      nav, .hero, footer { display: none !important; }
+      .receipt-section { padding: 0; background: white; }
+      .receipt-container {
+        max-width: 100%; box-shadow: none;
+        -webkit-mask-image: none; mask-image: none;
+        print-color-adjust: exact; -webkit-print-color-adjust: exact;
+      }
+      .print-btn { display: none; }
+    }
   </style>
 </head>
 <body>
   <nav aria-label="Navigasi utama">
-    <a href="#resources">RESOURCES</a>
-    <a href="mailto:dearmulyaa29@gmail.com">WORK WITH ME  </a>
+    <!-- RESOURCES membuka halaman baru di tab baru -->
+    <a href="resources.html" target="_blank" rel="noopener">RESOURCES</a>
+    <a href="mailto:dearmulyaa29@gmail.com">WORK WITH ME</a>
   </nav>
 
   <main>
     <section class="hero" aria-labelledby="main-title">
-        <h1 id="main-title">DEWI ARINDA MULYA</h1>
-      <div class="portfolio-title">PORTOFOLIO</div>
+      <h1 id="main-title">Dewi Arinda Mulya</h1>
+      <div class="portfolio-title">portofolio</div>
       <p class="tagline">Welcome to my personal website.</p>
 
       <div class="socials" aria-label="Media sosial">
-        <!-- Ganti URL contoh di bawah dengan tautan akunmu yang sebenarnya. -->
         <a href="https://instagram.com/ccpndan/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
           <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle class="filled" cx="17.6" cy="6.7" r="1"/></svg>
         </a>
@@ -343,7 +224,7 @@
         <a href="https://www.linkedin.com/in/dewi-arindda-mulya-36b3692b8/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path class="filled" d="M5 9h3v10H5zM6.5 4.5a1.8 1.8 0 1 0 0 3.6 1.8 1.8 0 0 0 0-3.6M10 9h2.9v1.4c.5-.9 1.5-1.7 3.2-1.7 3.1 0 3.9 2 3.9 4.7V19h-3v-5c0-1.2 0-2.8-1.8-2.8s-2.1 1.3-2.1 2.7V19H10z"/></svg>
         </a>
-        <a href="mailto:dearmylyaa29@gmial.com" aria-label="Email" title="Email">
+        <a href="mailto:dearmulyaa29@gmail.com" aria-label="Email" title="Email">
           <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>
         </a>
         <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" title="WhatsApp">
@@ -352,141 +233,113 @@
       </div>
     </section>
 
-   
-<section class="receipt-section" id="resources">
-  <div class="receipt-container">
+    <!-- ABOUT ME: hijau full lebar -->
+    <section class="receipt-section" id="about">
+      <div class="receipt-container">
 
-    <header class="receipt-header">
-      <h2>== ABOUT ME ==</h2>
-      <p>-- OFFICIAL PROFILE RECEIPT --</p>
-    </header>
+        <header class="receipt-header">
+          <h2>== ABOUT ME ==</h2>
+          <p>-- OFFICIAL PROFILE RECEIPT --</p>
+        </header>
 
-    <div class="receipt-row">
-      <div class="receipt-label">NAMA</div>
-      <div class="receipt-separator">:</div>
-      <div class="receipt-value">Dewi Arinda Mulya</div>
-    </div>
+        <div class="receipt-row">
+          <div class="receipt-label">NAMA</div>
+          <div class="receipt-separator">:</div>
+          <div class="receipt-value">Dewi Arinda Mulya</div>
+        </div>
+        <div class="receipt-row">
+          <div class="receipt-label">AGE</div>
+          <div class="receipt-separator">:</div>
+          <div class="receipt-value">21</div>
+        </div>
+        <div class="receipt-row">
+          <div class="receipt-label">LOCATION</div>
+          <div class="receipt-separator">:</div>
+          <div class="receipt-value">Jawa Timur, Indonesia</div>
+        </div>
 
-    <div class="receipt-row">
-      <div class="receipt-label">AGE</div>
-      <div class="receipt-separator">:</div>
-      <div class="receipt-value">21</div>
-    </div>
+        <hr class="dashed-line">
 
-    <div class="receipt-row">
-      <div class="receipt-label">LOCATION</div>
-      <div class="receipt-separator">:</div>
-      <div class="receipt-value">Jawa Timur, Indonesia</div>
-    </div>
+        <div class="section-title">&gt; ACHIEVEMENTS</div>
+        <div class="section-content">
+          <ul><li>* Awardee BSI Scholarship Inspirasi 2024</li></ul>
+        </div>
 
-    <hr class="dashed-line">
+        <hr class="dashed-line">
 
-    <div class="section-title">&gt; ACHIEVEMENTS</div>
-    <div class="section-content">
-      <ul>
-        <li>* Awardee BSI Scholarship Inspirasi 2024</li>
-      </ul>
-    </div>
+        <div class="section-title">&gt; STATUS</div>
+        <div class="section-content">
+          Student &amp; Content Creator<br>
+          (Open Internship &amp; Freelance)
+        </div>
 
-    <hr class="dashed-line">
+        <hr class="dashed-line">
 
-    <div class="section-title">&gt; STATUS</div>
-    <div class="section-content">
-      Student &amp; Content Creator<br>
-      (Open Internship &amp; Freelance)
-    </div>
+        <div class="section-title">&gt; TECHNICAL SKILLS</div>
+        <div class="section-content">
+          <ul>
+            <li>* Microsoft Office</li>
+            <li>* Canva, CapCut Pro</li>
+            <li>* AI Tools (GPT AI, Claude, Gemini)</li>
+          </ul>
+        </div>
 
-    <hr class="dashed-line">
+        <hr class="dashed-line">
 
-    <div class="section-title">&gt; TECHNICAL SKILLS</div>
-    <div class="section-content">
-      <ul>
-        <li>* Microsoft Office</li>
-        <li>* Canva, CapCut Pro</li>
-        <li>* AI Tools (GPT AI, Claude, Gemini)</li>
-      </ul>
-    </div>
+        <div class="section-title">&gt; LANGUAGES</div>
+        <div class="receipt-row">
+          <div class="receipt-label">Indonesia</div>
+          <div class="receipt-separator">:</div>
+          <div class="receipt-value">Native</div>
+        </div>
+        <div class="receipt-row">
+          <div class="receipt-label">English</div>
+          <div class="receipt-separator">:</div>
+          <div class="receipt-value">Beginner</div>
+        </div>
 
-    <hr class="dashed-line">
+        <hr class="dashed-line">
 
-    <div class="section-title">&gt; LANGUAGES</div>
+        <div class="section-title">&gt; EDUCATION</div>
+        <div class="section-content" style="margin-bottom: 8px;">
+          <strong>UIN Sayyid Ali Rahmatullah Tulungagung</strong><br>
+          Sharia Economic 2023-Present
+        </div>
+        <div class="section-content">
+          <strong>SMAN 1 Srengat</strong><br>
+          Social Science (IPS)
+        </div>
 
-    <div class="receipt-row">
-      <div class="receipt-label">Indonesia</div>
-      <div class="receipt-separator">:</div>
-      <div class="receipt-value">Native</div>
-    </div>
+        <hr class="dashed-line">
 
-    <div class="receipt-row">
-      <div class="receipt-label">English</div>
-      <div class="receipt-separator">:</div>
-      <div class="receipt-value">Beginner</div>
-    </div>
+        <div class="receipt-footer">
+          <div class="thank-you">THANK YOU FOR CHECKING OUT MY PORTFOLIO</div>
 
-    <hr class="dashed-line">
+          <div class="barcode-box" aria-label="Barcode dekoratif">
+            <div class="bar" style="width:3px"></div><div class="bar" style="width:1px"></div>
+            <div class="bar" style="width:4px"></div><div class="bar" style="width:2px"></div>
+            <div class="bar" style="width:1px"></div><div class="bar" style="width:3px"></div>
+            <div class="bar" style="width:5px"></div><div class="bar" style="width:1px"></div>
+            <div class="bar" style="width:2px"></div><div class="bar" style="width:4px"></div>
+            <div class="bar" style="width:1px"></div><div class="bar" style="width:3px"></div>
+            <div class="bar" style="width:2px"></div><div class="bar" style="width:1px"></div>
+            <div class="bar" style="width:4px"></div><div class="bar" style="width:3px"></div>
+            <div class="bar" style="width:1px"></div><div class="bar" style="width:5px"></div>
+            <div class="bar" style="width:2px"></div><div class="bar" style="width:1px"></div>
+            <div class="bar" style="width:3px"></div><div class="bar" style="width:4px"></div>
+            <div class="bar" style="width:1px"></div><div class="bar" style="width:2px"></div>
+            <div class="bar" style="width:3px"></div>
+          </div>
 
-    <div class="section-title">&gt; EDUCATION</div>
+          <div class="barcode-id">#DEWI-ARINDA-2026</div>
 
-    <div class="section-content" style="margin-bottom: 8px;">
-      <strong>UIN Sayyid Ali Rahmatullah Tulungagung</strong><br>
-      Sharia Economic
-      2023-Present
-    </div>
+          <button class="print-btn" type="button" onclick="window.print()">PRINT / SAVE AS PDF</button>
+        </div>
 
-    <div class="section-content">
-      <strong>SMAN 1 Srengat</strong><br>
-      Social Science (IPS)
-    </div>
-
-    <hr class="dashed-line">
-
-    <div class="receipt-footer">
-      <div class="thank-you">
-        THANK YOU FOR CHECKING OUT MY PORTFOLIO
       </div>
-
-      <div class="barcode-box" aria-label="Barcode dekoratif">
-        <div class="bar" style="width:3px"></div>
-        <div class="bar" style="width:1px"></div>
-        <div class="bar" style="width:4px"></div>
-        <div class="bar" style="width:2px"></div>
-        <div class="bar" style="width:1px"></div>
-        <div class="bar" style="width:3px"></div>
-        <div class="bar" style="width:5px"></div>
-        <div class="bar" style="width:1px"></div>
-        <div class="bar" style="width:2px"></div>
-        <div class="bar" style="width:4px"></div>
-        <div class="bar" style="width:1px"></div>
-        <div class="bar" style="width:3px"></div>
-        <div class="bar" style="width:2px"></div>
-        <div class="bar" style="width:1px"></div>
-        <div class="bar" style="width:4px"></div>
-        <div class="bar" style="width:3px"></div>
-        <div class="bar" style="width:1px"></div>
-        <div class="bar" style="width:5px"></div>
-        <div class="bar" style="width:2px"></div>
-        <div class="bar" style="width:1px"></div>
-        <div class="bar" style="width:3px"></div>
-        <div class="bar" style="width:4px"></div>
-        <div class="bar" style="width:1px"></div>
-        <div class="bar" style="width:2px"></div>
-        <div class="bar" style="width:3px"></div>
-      </div>
-
-      <div class="barcode-id">#DEWI-ARINDA-2026</div>
-
-      <button
-        class="print-btn"
-        type="button"
-        onclick="window.print()">
-      </button>
-    </div>
-
-  </div>
-</section>
-
+    </section>
   </main>
-  
+
   <footer>© 2026 Arinda · build in indonesia</footer>
 </body>
 </html>
